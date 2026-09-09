@@ -5,3 +5,9 @@
 !example.tfvars
 evidence/raw/
 .env
+*.pem
+*.key
+credentials
+.aws/
+__pycache__/
+.venv/

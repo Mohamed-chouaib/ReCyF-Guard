@@ -17,6 +17,9 @@ resource "aws_secretsmanager_secret" "db" {
 }
 
 resource "aws_cloudtrail" "lab" {
+  # Not deployable on LocalStack freemium; retained for static analysis.
+  count = var.deploy_licensed_services ? 1 : 0
+
   name                          = "recyf-lab-trail"
   s3_bucket_name                = aws_s3_bucket.trail_logs.id
   is_multi_region_trail         = false

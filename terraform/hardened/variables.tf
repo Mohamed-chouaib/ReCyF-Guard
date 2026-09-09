@@ -1,9 +1,8 @@
 # region / localstack_endpoint are declared in ../provider.tf (symlinked here).
 
 variable "deploy_licensed_services" {
-  description = "Resources requiring a paid LocalStack license. Scanned statically either way."
-  type        = bool
-  default     = false
+  type    = bool
+  default = false
 }
 
 data "aws_caller_identity" "current" {}
